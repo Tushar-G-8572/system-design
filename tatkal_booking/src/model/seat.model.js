@@ -16,7 +16,8 @@ const seatSchema = new mongoose.Schema({
   default: "available"
  },
  holdBy:{type:String, default:null},
- holdAt:{type:Date, default:null }
+ holdAt:{type:Date, default:null },
+ confirmedBy:{type:String, default:null}
 },{
  timestamps:true,
 })

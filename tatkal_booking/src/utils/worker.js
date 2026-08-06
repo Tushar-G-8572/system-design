@@ -50,7 +50,7 @@ async function startWorker() {
      console.log("seat not found");
      break
   }
-
+  await redisClient.set(`request:${requestId}`, result === 1 ? 'confirmed' : 'rejected', 'EX', 60);
   channel.ack(msg);
  })
 }
